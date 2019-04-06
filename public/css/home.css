@@ -1,0 +1,28 @@
+.heading-fullheight {
+  background-image: url('./../img/samplebackground.jpg');
+  background-color: rgba(100,100,100,.7);
+  background-blend-mode: multiply;
+}
+
+.custom-col-gas {
+  padding-right: 5px;
+  padding-left: 0px;
+}
+
+.custom-col-gas-2 {
+  padding-right: 0px;
+  padding-left: 5px;
+}
+
+@media (max-width: 767.98px) {
+  .custom-col-gas {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .custom-col-gas-2 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+}

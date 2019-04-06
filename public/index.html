@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
-
+    <link href="css/home.css" rel="stylesheet">
     <!-- Color -->
     <link id="skin" href="skins/plugin.css" rel="stylesheet">
 	
@@ -36,25 +36,23 @@
 
   <body>
  	<!-- Start preloading -->
-	<div id="loading" class="loading-invisible">
+	<div id="loading" class="loading-visible">
 		<div class="loading-center">
 			<div class="loading-center-absolute">
-				<div class="object" id="object_one"></div>
-				<div class="object" id="object_two"></div>
 				<div class="object" id="object_three"></div>
-				<div class="object" id="object_four"></div>
-				<div class="object" id="object_five"></div>
-				<div class="object" id="object_six"></div>
 				<div class="object" id="object_seven"></div>
-				<div class="object" id="object_eight"></div>
 				<div class="object" id="object_big"></div>
 			</div>
-			<p>Please wait...</p>
+			<p>กำลังโหลด</p>
 		</div>
 	</div>
 	<script type="text/javascript">
 		  document.getElementById("loading").className = "loading-visible";
-		  var hideDiv = function(){document.getElementById("loading").className = "loading-invisible";};
+		  var hideDiv = function(){
+        setTimeout(function() {
+          $("#loading").fadeOut()
+        }, 500)
+      };
 		  var oldLoad = window.onload;
 		  var newLoad = oldLoad ? function(){hideDiv.call(this);oldLoad.call(this);} : hideDiv;
 		  window.onload = newLoad;
@@ -70,27 +68,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
                             <i aria-hidden="true" class="fa fa-shopping-bag"></i>
-                            <span class="badge">3</span>
+                            <span class="badge">0</span>
                         </a>
                         <ul class="dropdown-menu cart-list">
-                            <li>
-                                <a href="#" class="photo"><img src="img/product/thumbs/thumb01.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Delica omtantur </a></h6>
-                                <p>2x - <span class="price">$99.99</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="img/product/thumbs/thumb02.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Omnes ocurreret</a></h6>
-                                <p>1x - <span class="price">$33.33</span></p>
-                            </li>
-                            <li>
-                                <a href="#" class="photo"><img src="img/product/thumbs/thumb03.jpg" class="cart-thumb" alt="" /></a>
-                                <h6><a href="#">Agam facilisis</a></h6>
-                                <p>2x - <span class="price">$99.99</span></p>
-                            </li>
                             <li class="total">
-                                <span class="pull-right"><strong>Total</strong>: $233.31</span>
-                                <a href="shopping-cart.html" class="btn btn-primary">Cart</a>
+                                <span class="pull-right"><strong>Total</strong>: $0</span>
+                                <a href="shopping-cart.html" class="btn btn-primary">รถเข็น</a>
                             </li>
                         </ul>
                     </li>
@@ -110,230 +93,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Home</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Minimalist</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="index.html">Default template</a></li>
-                                    <li><a href="index-alt1-filmroll.html">Filmroll slide</a></li>
-                                    <li><a href="index-alt2-creative-slide.html">Creative slide</a></li>
-	                                <li><a href="index-alt3-minimalist.html">Minimalist</a></li>
-                                    <li><a href="index-alt4-minimalist-2column.html">Minimalist 2column</a></li>
-                                    <li><a href="index-alt5-fullwidth.html">Fullwidth</a></li>
-									<li><a href="index-alt6-text-slide.html">Text slide</a></li>
-									<li><a href="index-alt7-simple-navigation.html">Simple navigation</a></li>
-									<li><a href="index-alt8-typer-text.html">Typer text</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Premium slider</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="index-alt9-clean-revolution-slider.html">Clean revolution</a></li>
-                                    <li><a href="index-alt10-agency-revolution-slider.html">Agency revolution</a></li>
-                                    <li><a href="index-alt11-creative-revolution-slider.html">Creative revolution</a></li>
-                                    <li><a href="index-alt12-corporate-revolution-slider.html">Corporate revolution</a></li>
-                                    <li><a href="index-alt13-minimalist-revolution-slider.html">Minimalist revolution</a></li>
-                                    <li><a href="index-alt14-boxed-revolution-slider.html">Boxed revolution</a></li>
-                                    <li><a href="index-alt15-clean-bgslider.html">Clean bgslider</a></li>
-									<li><a href="index-alt16-halfcolumn-bgslider.html">Half column bgslider</a></li>
-									<li><a href="index-alt17-shake-text.html">Shake text</a></li>
-									<li><a href="index-alt18-fullwidth-text.html">Fullwidth text</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Sidebar navigation</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="index-alt19-default-sidebar-nav.html">Default sidebar</a></li>
-                                    <li><a href="index-alt20-dark-sidebar-nav.html">Dark sidebar</a></li>
-                                    <li><a href="index-alt21-minimalist-sidebar-nav.html">Minimalist sidebar</a></li>
-                                    <li><a href="index-alt22-revolution-sidebar-nav.html">Revolution sidebar</a></li>
-                                    <li><a href="index-alt23-grider-sidebar-nav.html">Grider sidebar</a></li>
-									<li><a href="index-alt24-fullwidth-sidebar-nav.html">Fullwidth sidebar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>	
+                    <li class="active"><a href="#">หน้าแรก</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Page</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >สินค้า</a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >About</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="about.html">About Alt1</a></li>
-                                    <li><a href="about-alt1.html">About Alt2</a></li>
-                                    <li><a href="about-alt2.html">About Alt3</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Services</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="services.html">Services Alt1</a></li>
-                                    <li><a href="services-alt1.html">Services Alt2</a></li>
-                                    <li><a href="services-alt2.html">Services Alt3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="faq.html">Faq</a></li>
-							<li><a href="site-map.html">Site map</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Dropdown</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Menu alt</a></li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Submenu</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Menu alt</a></li>
-                                            <li><a href="#">Menu alt</a></li>
-                                            <li><a href="#">Menu alt</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Menu alt</a></li>
-                                    <li><a href="#">Menu alt</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="#">ประกันรภยนต์</a></li>
+                            <li><a href="#">ประกันการเดินทาง</a></li>
+                            <li><a href="#">สินเชื่อ</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog left sidebar</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog-leftsidebar.html">Blog left sidebar alt1</a></li>
-                                    <li><a href="blog-leftsidebar-alt1.html">Blog left sidebar alt2</a></li>
-                                    <li><a href="blog-leftsidebar-alt2.html">Blog left sidebar alt3</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog Right sidebar</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog-rightsidebar.html">Blog right sidebar alt1</a></li>
-                                    <li><a href="blog-rightsidebar-alt1.html">Blog right sidebar alt2</a></li>
-                                    <li><a href="blog-rightsidebar-alt2.html">Blog right sidebar alt3</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog fullwidth</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog-nosidebar.html">Blog fullwidth alt1</a></li>
-                                    <li><a href="blog-nosidebar-alt1.html">Blog fullwidth alt2</a></li>
-                                    <li><a href="blog-nosidebar-alt2.html">Blog fullwidth alt3</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Single Post</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="singlepost-leftsidebar.html">Single Post alt1</a></li>
-                                    <li><a href="singlepost-nosidebar.html">Single Post alt2</a></li>
-                                    <li><a href="singlepost-rightsidebar.html">Single Post alt3</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Portfolio</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="portfolio-alt1.html">Portfolio alt1</a></li>
-							<li><a href="portfolio-alt2.html">Portfolio alt2</a></li>
-							<li><a href="portfolio-alt3.html">Portfolio alt3</a></li>
-							<li><a href="portfolio-alt4.html">Portfolio alt4</a></li>
-							<li><a href="portfolio-alt5.html">Portfolio alt5</a></li>
-							<li><a href="portfolio-alt6.html">Portfolio alt6</a></li>
-							<li><a href="portfolio-alt7.html">Portfolio alt7</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components</a>
-                        <ul class="dropdown-menu megamenu-content" role="menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Interactive</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="call-to-action.html">Call to action</a></li>
-                                                <li><a href="counter.html">Counter</a></li>
-                                                <li><a href="maps.html">Google maps</a></li>
-                                                <li><a href="media-responsive.html">Media responsive</a></li>
-                                                <li><a href="modal.html">Modal</a></li>
-                                                <li><a href="process.html">Process</a></li>
-                                                <li><a href="progress.html">Progress bar</a></li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="testimoni.html">Testimoni</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Elements</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-												<li><a href="accordion.html">Accordion</a></li>
-                                                <li><a href="alert.html">Alert</a></li>
-                                                <li><a href="button.html">Button</a></li>
-                                                <li><a href="form.html">Form</a></li>
-                                                <li><a href="icon.html">Icons style</a></li>
-                                                <li><a href="icon-box.html">Icons with box</a></li>
-												<li><a href="icon-text.html">Icons with text</a></li>
-                                                <li><a href="images.html">Images style</a></li>
-												<li><a href="pagination.html">Pagination</a></li>
-												<li><a href="tab.html">Tab style</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Typography & MLsc</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">                                                
-                                                <li><a href="typography.html">Typography</a></li>
-                                                <li><a href="heading.html">Heading</a></li>
-                                                <li><a href="blockquote.html">Blockquote</a></li>
-                                                <li><a href="columns.html">Columns</a></li>
-                                                <li><a href="divider.html">Separators</a></li>
-                                                <li><a href="dropcaps.html">Dropcaps</a></li>
-                                                <li><a href="highlights.html">Highlights</a></li>
-                                                <li><a href="list.html">List style</a></li>
-                                                <li><a href="maps.html">Maps</a></li>
-                                                <li><a href="modal.html">Modal</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Extra page</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="error404.html">Error 404</a></li>
-                                                <li><a href="maintenance.html">Maintenance</a></li>
-                                                <li><a href="signin.html">Signin</a></li>
-                                                <li><a href="signup.html">Signin</a></li>
-                                                <li><a href="underconstruction.html">Underconstruction alt1</a></li>
-												<li><a href="underconstruction-alt1.html">Underconstruction alt2</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- end col-3 -->
-                                </div><!-- end row -->
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Shop</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Shop page</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="shop.html">Shop page alt1</a></li>
-                                    <li><a href="shop-alt1.html">Shop page alt2</a></li>
-									<li><a href="shop-alt2.html">Shop page alt3</a></li>
-									<li><a href="shop-alt3.html">Shop page alt4</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="shop-detail.html">Shop detail</a></li>
-                            <li><a href="shopping-cart.html">Shopping cart</a></li>
-                            <li><a href="shopping-checkout.html">Checkout</a></li>
-                        </ul>
-                    </li>
-					<li><a href="contact.html">Contact us</a></li>
+                    <li><a href="#">ติดต่อ</a></li>
+                    <li><a href="#">คำถามที่พบบ่อย</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
@@ -341,304 +111,247 @@
     <!-- End Navigation -->
 
 	<!-- Start page heading -->
-	<div class="page-heading">
+	<div class="page-heading heading-fullheight">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-7">
-					<div class="intro">
-						<h4>
-						Creativ is a clean, modern and responsive bootstrap template, suitable for creative agency 
-						</h4>
-						<p>
-						High-quality design with a minimalist style and lot features
-						</p>
-					</div>
-				</div>
-				<div class="col-md-5">
-					<form>
-						<fieldset class="form-search">
-							<input type="text" class="input-search" placeholder="To search type and hit enter" />
-							<button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
-						</fieldset>
-					</form>
-				</div>
-			</div>
+
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="login-wrapp">
+            <div class="logreg-contain">
+              <div class="custom-tabs" data-effect-in="flipInX">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="active">
+                    <a href="#tab1" data-toggle="tab">ประกันรถยนต์</a>
+                  </li>
+                  <li>
+                    <a href="#tab2" data-toggle="tab">ลงชื่อเข้าใช้</a>
+                  </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane fade in active" id="tab1">
+                    <form style="margin-bottom: 0px;">
+                      <div class="form-group" style="margin-bottom: 0px;">
+                        <label style="margin-bottom: 0px;">ประกันชั้น :</label>
+                      </div>
+                    </form>
+                    <form class="form-inline" style="margin-bottom: 15px;">
+                      <div class="form-group">
+                        <div class="checkbox">
+                          <label style="margin-right: 10px">
+                            <input type="checkbox" value="check1" checked>
+                            ชั้น 1
+                          </label>
+                          <label style="margin-right: 10px">
+                            <input type="checkbox" value="check2" checked>
+                            ชั้น 2+
+                          </label>
+                          <label style="margin-right: 10px">
+                            <input type="checkbox" value="check3" checked>
+                            ชั้น 3+
+                          </label>
+                          <label style="margin-right: 10px">
+                            <input type="checkbox" value="check4">
+                            ชั้น 3
+                          </label>
+                          <label style="margin-right: 10px">
+                            <input type="checkbox" value="check4">
+                            เฉพาะ พ.ร.บ.
+                          </label>
+                        </div>
+                      </div>
+                    </form>
+                    <form>
+                      <div class="col-xs-12 col-md-6 custom-col-gas">
+                        <div class="form-group">
+                          <label>ยี่ห้อรถยนต์</label>
+                          <p>
+                            <select class="form-control" data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'>
+                              <optgroup label="ยี่ห้อรถยอดนิยม">
+                                <option value="Toyota">Toyota</option>
+                                <option selected value="Honda">Honda</option>
+                                <option value="Isuzu">Isuzu</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Mazda">Mazda</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                              </optgroup>
+                              <optgroup label="ยี่ห้อรถทั้งหมด">
+                                <option value="Alfa Romeo">Alfa Romeo</option>
+                                <option value="Audi">Audi</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Chery">Chery</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                                <option value="Chrysler">Chrysler</option>
+                                <option value="Citroen">Citroen</option>
+                                <option value="Daewoo">Daewoo</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Holden">Holden</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Isuzu">Isuzu</option>
+                                <option value="Jeep">Jeep</option>
+                                <option value="Kia">Kia</option>
+                                <option value="Land Rover">Land Rover</option>
+                                <option value="Lexus">Lexus</option>
+                                <option value="MG">MG</option>
+                                <option value="Mazda">Mazda</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                <option value="Mini">Mini</option>
+                                <option value="Mitsubishi">Mitsubishi</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Opel">Opel</option>
+                                <option value="Peugeot">Peugeot</option>
+                                <option value="Proton">Proton</option>
+                                <option value="Renault">Renault</option>
+                                <option value="Rover">Rover</option>
+                                <option value="Saab">Saab</option>
+                                <option value="Seat">Seat</option>
+                                <option value="Skoda">Skoda</option>
+                                <option value="Ssangyong">Ssangyong</option>
+                                <option value="Subaru">Subaru</option>
+                                <option value="Suzuki">Suzuki</option>
+                                <option value="Tata">Tata</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Volvo">Volvo</option>
+                              </optgroup>
+                            </select>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-6 custom-col-gas-2">
+                        <div class="form-group">
+                          <label>รุ่นรถยนต์ :</label>
+                          <p>
+                            <select class="form-control" data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'>
+                              <option selected value="Accord (2000cc)">Accord (2000cc)</option>
+                              <option value="Accord (2200cc)">Accord (2200cc)</option>
+                              <option value="Accord (2300cc)">Accord (2300cc)</option>
+                              <option value="Accord (2400cc)">Accord (2400cc)</option>
+                              <option value="Accord (3000cc)">Accord (3000cc)</option>
+                              <option value="Accord (3500cc)">Accord (3500cc)</option>
+                              <option value="Accord Hybrid (2000cc)">Accord Hybrid (2000cc)</option>
+                              <option value="BR-V (1500cc)">BR-V (1500cc)</option>
+                              <option value="Brio (1200cc)">Brio (1200cc)</option>
+                              <option value="CR-V (1600cc)">CR-V (1600cc)</option>
+                              <option value="CR-V (2000cc)">CR-V (2000cc)</option>
+                              <option value="CR-V (2400cc)">CR-V (2400cc)</option>
+                              <option value="City (1400cc)">City (1400cc)</option>
+                              <option value="City (1500cc)">City (1500cc)</option>
+                              <option value="Civic (1500cc / 2dr)">Civic (1500cc / 2dr)</option>
+                              <option value="Civic (1500cc / 4dr)">Civic (1500cc / 4dr)</option>
+                              <option value="Civic (1600cc / 2dr)">Civic (1600cc / 2dr)</option>
+                              <option value="Civic (1600cc / 4dr)">Civic (1600cc / 4dr)</option>
+                              <option value="Civic (1700cc)">Civic (1700cc)</option>
+                              <option value="Civic (1800cc)">Civic (1800cc)</option>
+                              <option value="Civic (2000cc)">Civic (2000cc)</option>
+                              <option value="Civic Hybrid (1500cc)">Civic Hybrid (1500cc)</option>
+                              <option value="Freed (1500cc)">Freed (1500cc)</option>
+                              <option value="HR-V (1800cc)">HR-V (1800cc)</option>
+                              <option value="Jazz (1500cc)">Jazz (1500cc)</option>
+                              <option value="Jazz Hybrid (1400cc)">Jazz Hybrid (1400cc)</option>
+                              <option value="Mobilio (1500cc)">Mobilio (1500cc)</option>
+                              <option value="Stream (2000cc)">Stream (2000cc)</option>
+                            </select>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>ปีที่จดทะเบียน :</label>
+                        <p>
+                          <select class="form-control" data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'>
+                            <option selected value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                          </select>
+                        </p>
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary">ค้นหา</button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="tab2">
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+                        <h5>Login with social media account</h5>
+                        <p><a href="#" class="btn btn-facebook btn-icon btn-block">Signup with facebook <i class="fa fa-facebook"></i></a></p>
+                        <p><a href="#" class="btn btn-twitter btn-icon btn-block">Signup with twitter <i class="fa fa-twitter"></i></a></p>
+                        <p><a href="#" class="btn btn-instagram btn-icon btn-block">Signup with instagram  <i class="fa fa-instagram"></i></a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 		</div>
 	</div>
 	<!-- End page heading -->
 	
-	<!-- Start slider wrapper -->
-	<div class="slider-wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="slider-content">
-						<div class="flexslider-wrapp">
-							<!-- Start Images slider -->
-							<div class="flexslider">
-								<ul class="slides">
-									<li><img src="img/slider/img01.png" alt=""></li>
-									<li><img src="img/slider/img02.png" alt=""></li>
-									<li><img src="img/slider/img03.png" alt=""></li>
-								</ul>
-							</div>
-							<!-- End Images slider -->
-						</div>
-						<img src="img/macbook.png" class="img-responsive" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End slider wrapper -->
-	
-	<!-- Start contain wrapper -->
-	<div class="contain-wrapp">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="col-icon absolute-left">
-						<i class="fa fa-laptop"></i>
-						<h5>Responsive</h5>
-						<p>
-						Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="col-icon absolute-left">
-						<i class="fa fa-magic"></i>
-						<h5>Clean design</h5>
-						<p>
-						Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="col-icon absolute-left">
-						<i class="fa fa-trophy"></i>
-						<h5>Lot features</h5>
-						<p>
-						Mollis volumus ne ius. Mei fierent lucilius ne. In oratio exerci democritum vix. Ad pro possim latine laoreet postulant no per.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="divider margintop50"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<div class="title-head centered">
-						<span>Our gallery</span>
-						<h4>Our recent project</h4>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<!-- Start portfolio filter -->
-					<div id="js-filters-masonry-projects" class="cbp-l-filters-buttonCenter cbp-border-filter">
-						<div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
-							All <div class="cbp-filter-counter"></div>
-						</div>
-						<div data-filter=".identity" class="cbp-filter-item">
-							Identity <div class="cbp-filter-counter"></div>
-						</div>
-						<div data-filter=".web-design" class="cbp-filter-item">
-							Web Design <div class="cbp-filter-counter"></div>
-						</div>
-						<div data-filter=".graphic" class="cbp-filter-item">
-							Graphic <div class="cbp-filter-counter"></div>
-						</div>
-						<div data-filter=".logos" class="cbp-filter-item">
-							Logo <div class="cbp-filter-counter"></div>
-						</div>
-						<div data-filter=".fonts" class="cbp-filter-item">
-							Fonts <div class="cbp-filter-counter"></div>
-						</div>
-					</div>
-					<!-- End portfolio filter -->
-				
-					<!-- Start portfolio -->
-					<div id="js-grid-masonry-projects" class="cbp cbp-l-grid-masonry-projects">
-						<!-- Start project 1 -->
-						<div class="cbp-item graphic">
-							<a href="portfolioDetail/project1.html" class="cbp-caption cbp-singlePage" rel="nofollow">
-								<div class="cbp-caption-defaultWrap">
-									<img src="img/gallery/480x460/img01.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-zoom">
-										<div class="cbp-l-caption-body">
-											<div class="cbp-l-caption-title">Consulatu</div>
-											<div class="cbp-l-caption-desc">by 99webpage</div>
-										</div>
-									</div>
-								</div>
-							</a>
-							<div class="cbp-custom-title">
-								<a href="portfolioDetail/project1.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Consulatu</a>
-								<div class="cbp-projects-desc">Graphic</div>
-								<ul class="cbp-project-action">
-									<li><a href="#">202 <i class="fa fa-heart"></i></a></li>
-									<li><a href="#">80 <i class="fa fa-download"></i></a></li>
-									<li><a href="#"><span class="project-label">Free</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- End project 1 -->
-						
-						<!-- Start project 2 -->
-						<div class="cbp-item web-design">
-							<a href="portfolioDetail/project2.html" class="cbp-caption cbp-singlePage" rel="nofollow">
-								<div class="cbp-caption-defaultWrap">
-									<img src="img/gallery/480x460/img02.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-zoom">
-										<div class="cbp-l-caption-body">
-											<div class="cbp-l-caption-title">Democritum</div>
-											<div class="cbp-l-caption-desc">by 99webpage</div>
-										</div>
-									</div>
-								</div>
-							</a>
-							<div class="cbp-custom-title">
-								<a href="portfolioDetail/project2.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Democritum</a>
-								<div class="cbp-projects-desc">Web design</div>
-								<ul class="cbp-project-action">
-									<li><a href="#">112 <i class="fa fa-heart"></i></a></li>
-									<li><a href="#">50 <i class="fa fa-download"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- End project 2 -->
-						
-						<!-- Start project 3 -->
-						<div class="cbp-item logos">
-							<a href="portfolioDetail/project3.html" class="cbp-caption cbp-singlePage" rel="nofollow">
-								<div class="cbp-caption-defaultWrap">
-									<img src="img/gallery/480x460/img03.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-zoom">
-										<div class="cbp-l-caption-body">
-											<div class="cbp-l-caption-title">Vulputate</div>
-											<div class="cbp-l-caption-desc">by 99webpage</div>
-										</div>
-									</div>
-								</div>
-							</a>
-							<div class="cbp-custom-title">
-								<a href="portfolioDetail/project3.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Vulputate</a>
-								<div class="cbp-projects-desc">Logos</div>
-								<ul class="cbp-project-action">
-									<li><a href="#">55 <i class="fa fa-heart"></i></a></li>
-									<li><a href="#">12 <i class="fa fa-download"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- End project 3 -->
-						
-						<!-- Start project 4 -->
-						<div class="cbp-item identity">
-							<a href="portfolioDetail/project4.html" class="cbp-caption cbp-singlePage" rel="nofollow">
-								<div class="cbp-caption-defaultWrap">
-									<img src="img/gallery/480x460/img04.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-zoom">
-										<div class="cbp-l-caption-body">
-											<div class="cbp-l-caption-title">Eligendi</div>
-											<div class="cbp-l-caption-desc">by 99webpage</div>
-										</div>
-									</div>
-								</div>
-							</a>
-							<div class="cbp-custom-title">
-								<a href="portfolioDetail/project4.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Eligendi</a>
-								<div class="cbp-projects-desc">Identity</div>
-								<ul class="cbp-project-action">
-									<li><a href="#">87 <i class="fa fa-heart"></i></a></li>
-									<li><a href="#">23 <i class="fa fa-download"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- End project 4 -->
-						
-						<!-- Start project 5 -->
-						<div class="cbp-item fonts">
-							<a href="portfolioDetail/project5.html" class="cbp-caption cbp-singlePage" rel="nofollow">
-								<div class="cbp-caption-defaultWrap">
-									<img src="img/gallery/480x460/img05.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-zoom">
-										<div class="cbp-l-caption-body">
-											<div class="cbp-l-caption-title">Platonem</div>
-											<div class="cbp-l-caption-desc">by 99webpage</div>
-										</div>
-									</div>
-								</div>
-							</a>
-							<div class="cbp-custom-title">
-								<a href="portfolioDetail/project5.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Platonem</a>
-								<div class="cbp-projects-desc">Fonts</div>
-								<ul class="cbp-project-action">
-									<li><a href="#">111 <i class="fa fa-heart"></i></a></li>
-									<li><a href="#">98 <i class="fa fa-download"></i></a></li>
-									<li><a href="#"><span class="project-label">Free</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- End project 5 -->
-						
-						<!-- Start project 6 -->
-						<div class="cbp-item identity">
-							<a href="portfolioDetail/project6.html" class="cbp-caption cbp-singlePage" rel="nofollow">
-								<div class="cbp-caption-defaultWrap">
-									<img src="img/gallery/480x460/img06.jpg" alt="">
-								</div>
-								<div class="cbp-caption-activeWrap">
-									<div class="cbp-l-caption-zoom">
-										<div class="cbp-l-caption-body">
-											<div class="cbp-l-caption-title">Cibo</div>
-											<div class="cbp-l-caption-desc">by 99webpage</div>
-										</div>
-									</div>
-								</div>
-							</a>
-							<div class="cbp-custom-title">
-								<a href="portfolioDetail/project6.html" class="cbp-singlePage cbp-project-name" rel="nofollow">Cibo</a>
-								<div class="cbp-projects-desc">Identity</div>
-								<ul class="cbp-project-action">
-									<li><a href="#">76 <i class="fa fa-heart"></i></a></li>
-									<li><a href="#">22 <i class="fa fa-download"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- End project 6 -->
-					</div>
-					<!-- End portfolio -->
-					
-					<!-- Start portfolio load more-->
-					<div id="js-loadMore-masonry-projects" class="cbp-l-loadMore-button">
-						<a href="portfolioDetail/loadMore.html" class="cbp-l-loadMore-link" rel="nofollow">
-							<span class="cbp-l-loadMore-defaultText">Load more</span>
-							<span class="cbp-l-loadMore-loadingText">Loading...</span>
-							<span class="cbp-l-loadMore-noMoreLoading">No more works</span>
-						</a>
-					</div>
-					<!-- End portfolio load more-->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End contain wrapper -->
-	
+  <!-- Start contain wrapp -->
+  <div class="contain-wrapp paddingbot-clear">
+    <div class="container">
+      <div class="row marginbot60">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <div class="title-head centered">
+            <h4>ผลิตภัณฑ์ประกันของเรา</h4>
+          </div>
+          <p>
+          เรามีผลิตภัณฑ์ให้เลือกมากมาย ทั้งประกันวินาศภัย และประกันชีวิตจากบริษัทประกันชั้นนำมากกว่า 10 แห่ง เพื่อตอบสนองความต้องการแบบครบวงจร คุณจึงมั่นใจได้ว่าประกันที่ซื้อไปตรงกับความต้องการ และคุ้มค่าที่สุด
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box-icon absolute-left">
+            <div class="icon-content">
+              <i class="fa fa-car fa-primary"></i>
+              <h5>ประกันรถยนต์</h5>
+              <p>
+              เรามีครบทั้งแบบชั้น 1 , ชั้น 2 + , ชั้น 3 + , ชั้น 3 และ พ.ร.บ.รถยนต์ ซึ่งหลัก ๆ จะคุ้มครองรถของคุณ คุ้มครองชีวิตและค่ารักษาพยาบาลของคุณและผู้โดยสาร และคุ้มครองไปถึงรถหรือทรัพย์สินของคู่กรณี ไม่ว่าคุณจะต้องการความคุ้มครองแบบไหน GettGo ก็มีให้
+              </p>
+            </div>
+            <i class="fa fa-code icon-lg"></i>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box-icon absolute-left">
+            <div class="icon-content">
+              <i class="fa fa-map-marker fa-primary"></i>
+              <h5>ประกันการเดินทาง</h5>
+              <p>
+              ไม่ว่าจะท่องเที่ยว หรือศึกษาต่อต่างประเทศในโซนเอเชีย หรือประเทศไหนๆ ทั่วโลก เราก็มีแบบประกัน และบริษัทประกันชั้นนำให้เลือกมากมาย ความคุ้มครองหลัก ๆ ของประกัน เดินทางจะครอบคลุมค่ารักษาพยาบาลจากการเกิดอุบัติเหตุหรือเจ็บป่วยในระหว่างการ เดินทาง
+              </p>
+            </div>
+            <i class="fa fa-pencil icon-lg"></i>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box-icon absolute-left">
+            <div class="icon-content">
+              <i class="fa fa-shield fa-primary"></i>
+              <h5>คุ้มครองครอบคลุม</h5>
+              <p>
+              การคุ้มครองจากประกันภัยชั้นนำกว่า 10 แห่งมีครอบคลุมทุกประเภทแบบครบวงจร เพื่อให้ลูกค้าได้รับสินค้าที่ดีที่สุด เขียนอะไรต่อไปแบบไม่มีมูล เพียงแค่อยากให้ข้อความมันยาวขึ้นเพียงเท่านั้น ขออีกประมาณหนึ่งประโยค ขอบคุณครับ
+              </p>
+            </div>
+            <i class="fa fa-shield icon-lg"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End contain wrapp -->
+
 	<div class="clearfix"></div>
 	
 	<!-- Start footer -->
@@ -648,36 +361,35 @@
 				<div class="col-md-2 col-sm-2 col-xs-6">
 					<div class="widget">
 						<ul class="link-list">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Meet team</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Help</a></li>
+							<li><a href="#">เกี่ยวกับเรา</a></li>
+							<li><a href="#">บริการ</a></li>
+							<li><a href="#">ทีม</a></li>
+							<li><a href="#">ติดต่อ</a></li>
+							<li><a href="#">ช่วยเหลิือ</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6">
 					<div class="widget">
 						<ul class="link-list">
-							<li><a href="#">Themes</a></li>
-							<li><a href="#">Free resources</a></li>
-							<li><a href="#">Logi design</a></li>
-							<li><a href="#">UI/UX PSD</a></li>
-							<li><a href="#">Graphic</a></li>
+							<li><a href="#">ประกันรถยนต์</a></li>
+							<li><a href="#">ประกันเดินทาง</a></li>
+							<li><a href="#">สินเชื่อเงินสด</a></li>
+							<li><a href="#">บัตรเครดิต</a></li>
+							<li><a href="#">รีไฟแนนซ์บ้าน</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-12">
 					<div class="widget">
-						<div class="tweet"></div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-12">
 					<div class="widget">
-						<h5>Stay update with us !</h5>
+						<h5>รับข้อมูลข่าวสารจากเรา !</h5>
 						<!-- Start Subscribe -->
 						<div class="input-group">
-							<input type="text" class="form-subscribe" placeholder="Enter your email address...">
+							<input type="text" class="form-subscribe" placeholder="ป้อนอีเมลล์ของคุณ...">
 							<span class="input-group-btn">
 								<button class="btn btn-primary" type="button"><span class="fa fa-paper-plane"></span></button>
 							</span>
@@ -691,7 +403,7 @@
 					<div class="subfooter">
 						<div class="row">
 							<div class="col-md-6 col-sm-6">
-								<p class="copyright">2016 &copy; Copyright <a href="http://99webpage.com/">99webpage.</a> All rights Reserved.</p>
+								<p class="copyright">สงวนลิขสิทธิ์ &copy; 2019 <a href="http://plugin-digital-solution.com/">Plugin Digital Solution</a></p>
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<ul class="social-network">
