@@ -5,9 +5,9 @@ var $range = $("#range");
 $range.ionRangeSlider({
     type: "double",
     min: 0,
-    max: 500,
-    from: 90,
-    to: 410,
+    max: 5000,
+    from: 500,
+    to: 1900,
     onFinish: function (num) {
          $('.product-wrapper').hide().filter(function() {
             var price = parseInt($(this).data("price"), 10);

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="ico/favicon.png">
+
+    <title>Creativ - Multiple creative HTML5 template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/search.css" rel="stylesheet">
+
+    <!-- Color -->
+    <link id="skin" href="skins/plugin.css" rel="stylesheet">
+	
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <!-- Start preloading -->
+  <div id="loading" class="loading-visible">
+    <div class="loading-center">
+      <div class="loading-center-absolute">
+        <div class="object" id="object_three"></div>
+        <div class="object" id="object_seven"></div>
+        <div class="object" id="object_big"></div>
+      </div>
+      <p>กำลังโหลด</p>
+    </div>
+  </div>
+  <script type="text/javascript">
+      document.getElementById("loading").className = "loading-visible";
+      var hideDiv = function(){
+        setTimeout(function() {
+          $("#loading").fadeOut()
+        }, 500)
+      };
+      var oldLoad = window.onload;
+      var newLoad = oldLoad ? function(){hideDiv.call(this);oldLoad.call(this);} : hideDiv;
+      window.onload = newLoad;
+  </script>
+  <!-- End preloading -->
+
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-inverse navbar-sticky bootsnav">
+        <div class="container">
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                            <i aria-hidden="true" class="fa fa-shopping-bag"></i>
+                            <span class="badge">0</span>
+                        </a>
+                        <ul class="dropdown-menu cart-list">
+                            <li class="total">
+                                <span class="pull-right"><strong>Total</strong>: $0</span>
+                                <a href="shopping-cart.html" class="btn btn-primary">รถเข็น</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Atribute Navigation -->
+
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#brand"><img src="img/brand/logo-white.png" class="logo" alt=""></a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="active"><a href="#">หน้าแรก</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >สินค้า</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">ประกันรภยนต์</a></li>
+                            <li><a href="#">ประกันการเดินทาง</a></li>
+                            <li><a href="#">สินเชื่อ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ติดต่อ</a></li>
+                    <li><a href="#">คำถามที่พบบ่อย</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <!-- End Navigation -->
+
+	
+	<!-- Start contain wrapp -->
+	<div class="contain-wrapp padding-bot50">	
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<aside>
+						<div class="widget">
+							<h5 class="widget-head">กรองด้วยราคา</h5>
+							<div class="range-wrapp">
+								<input type="text" id="range" value="" name="range" />
+							</div>
+						</div>
+						<div class="widget">
+							<div id="filters">
+								<div class='filter-attributes form-inline'>
+									<h5 class="widget-head">ประกันชั้น</h5>
+									<div class="form-group"><input checked type='checkbox' name='size' id='s' value='s' /> <span>ชั้น 1</span></div>
+									<div class="form-group"><input checked type='checkbox' name='size' id='m' value='m'> <span>ชั้น 2+</span></div>
+									<div class="form-group"><input checked type='checkbox' name='size' id='l' value='l'> <span>ชั้น 3+</span></div>
+									<div class="form-group"><input type='checkbox' name='size' id='xl' value='xl'> <span>ชั้น 3</span></div>
+								</div>
+								<div>
+									<input type='button' id='none' class="btn btn-primary btn-sm" value='ล้างตัวกรอง' />
+								</div>
+							</div>
+						</div>
+					</aside>
+				</div>
+				<div class="col-md-9 col-sm-8 col-xs-12">
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12">							
+							<label>เรียงจาก :</label>
+							<select class="form-control" data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'>
+								<option>ราคาน้อยไปหามาก</option>
+								<option>ราคามากไปหาน้อย</option>
+								<option>ทุนประกันจากน้อยไปมาก</option>
+								<option>ทุนประกันจากมากไปน้อย</option>
+							</select>
+						</div>
+						<div class="col-md-8 col-sm-6 col-xs-12 marginbot30">
+							<div class="grider">
+								<a href="#" class="active"><i class="fa fa-th-large"></i></a>
+								<a href="#"><i class="fa fa-list"></i></a>
+							</div>
+						</div>
+					</div>
+                    
+                    <div class="clearfix"></div>
+                    
+					<div class="row">
+						<!-- Start product 1 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='100' data-colour='red' data-size='s'  data-brand='ereble'>
+							<div class="img-wrapper">
+								<img src="img/product/prod01.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>1,200 บาท</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-half-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">ประกันภัยไทยวิวัฒน์</a></h6>
+							</div>
+						</div>
+						<!-- End product 1 -->
+						
+						<!-- Start product 2 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='90'  data-colour='yellow' data-size='l'  data-brand='unkl'>
+							<div class="img-wrapper">
+								<div class="product-caption capZoomIn">
+									<a href="#" class="btn btn-bordered">Buy now</a>
+								</div>
+								<span class="product-label">Sale</span>
+								<img src="img/product/prod02.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+							<div class="price"><del>$100</del> <span>$90</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-half-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Doming tractatos</a></h6>
+							</div>
+						</div>
+						<!-- End product 2 -->
+							
+						<!-- Start product 3 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='410' data-colour='blue' data-size='m'  data-brand='lumo'>
+							<div class="img-wrapper">
+								<div class="product-caption capZoomIn">
+									<a href="#" class="btn btn-bordered">Buy now</a>
+								</div>
+								<img src="img/product/prod03.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$410</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Debet ubique</a></h6>
+							</div>
+						</div>
+						<!-- End product 3 -->
+						
+						<!-- Start product 4 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='150' data-colour='green' data-size='medium'  data-brand='babybones'>
+							<div class="img-wrapper">
+								<div class="product-caption capZoomIn">
+									<a href="#" class="btn btn-bordered">Buy now</a>
+								</div>
+								<img src="img/product/prod04.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$150</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Mundi quando</a></h6>
+							</div>
+						</div>
+						<!-- End product 4 -->
+						
+						<!-- Start product 5 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='250' data-colour='white' data-size='s'  data-brand='wadezig'>
+							<div class="img-wrapper">
+								<div class="product-caption capZoomIn">
+									<a href="#" class="btn btn-bordered">Buy now</a>
+								</div>
+								<img src="img/product/prod05.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$250</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Theophrastus</a></h6>
+							</div>
+						</div>
+						<!-- End product 5 -->
+						
+						<!-- Start product 6 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='400' data-colour='black' data-size='xl'  data-brand='nls'>
+							<div class="img-wrapper">
+								<div class="product-caption capZoomIn">
+									<a href="#" class="btn btn-bordered">Buy now</a>
+								</div>
+								<img src="img/product/prod06.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$400</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Adhuc utamur</a></h6>
+							</div>
+						</div>
+						<!-- End product 6 -->
+						
+						<!-- Start product 7 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='320' data-colour='cream' data-size='xxl'  data-brand='rsch'>
+							<div class="img-wrapper">
+								<div class="product-caption capZoomIn">
+									<a href="#" class="btn btn-bordered">Buy now</a>
+								</div>
+								<span class="product-label">Sold</span>
+								<img src="img/product/prod07.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$320</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<h6><a href="shop-detail.html">Imperdiet</a></h6>
+							</div>
+						</div>
+						<!-- End product 7 -->
+						
+						<!-- Start product 8 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='120' data-colour='purple' data-size='s'  data-brand='screamous'>
+							<div class="img-wrapper">
+								<div class="product-caption capZoomIn">
+									<a href="#" class="btn btn-bordered">Buy now</a>
+								</div>
+								<img src="img/product/prod08.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$120</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Ridens facilisi</a></h6>
+							</div>
+						</div>
+						<!-- End product 8 -->
+						
+						<!-- Start product 9 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='200' data-colour='brown' data-size='m'  data-brand='kickdenim'>
+							<div class="img-wrapper">
+								<div class="product-caption capZoomIn">
+									<a href="#" class="btn btn-bordered">Buy now</a>
+								</div>
+								<span class="product-label">Sold</span>
+								<img src="img/product/prod09.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$200</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Tritani docendi</a></h6>
+							</div>
+						</div>
+						<!-- End product 9 -->
+						
+						<!-- Start product 10 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='110' data-colour='white' data-size='m'  data-brand='rsch'>
+							<div class="img-wrapper">
+								<img src="img/product/prod10.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$110</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-half-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Imperdiet</a></h6>
+							</div>
+						</div>
+						<!-- End product 10 -->
+						
+						<!-- Start product 11 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='250' data-colour='black' data-size='xl'  data-brand='unkl'>
+							<div class="img-wrapper">
+								<span class="product-label">Sale</span>
+								<img src="img/product/prod11.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$250</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Ridens facilisi</a></h6>
+							</div>
+						</div>
+						<!-- End product 11 -->
+						
+						<!-- Start product 12 -->
+						<div class="col-md-4 col-xs-6 product-wrapper" data-price='280' data-colour='blue' data-size='l'  data-brand='wadezig'>
+							<div class="img-wrapper">
+								<img src="img/product/prod12.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="product-containt">
+								<div class="price"><span>$280</span></div>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+								</div>
+								<h6><a href="shop-detail.html">Tritani docendi</a></h6>
+							</div>
+						</div>
+						<!-- End product 9 -->
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-sm-6">							
+							<nav>
+								<ul class="pagination">
+									<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+									<li class="active"><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="result">
+								<label>แสดงผล :</label>
+								<span>1-12 จากผลลัพท์ทั้งหมด 102</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	<!-- End contain wrapp -->
+	
+  <!-- Start footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-6">
+          <div class="widget">
+            <ul class="link-list">
+              <li><a href="#">เกี่ยวกับเรา</a></li>
+              <li><a href="#">บริการ</a></li>
+              <li><a href="#">ทีม</a></li>
+              <li><a href="#">ติดต่อ</a></li>
+              <li><a href="#">ช่วยเหลิือ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-6">
+          <div class="widget">
+            <ul class="link-list">
+              <li><a href="#">ประกันรถยนต์</a></li>
+              <li><a href="#">ประกันเดินทาง</a></li>
+              <li><a href="#">สินเชื่อเงินสด</a></li>
+              <li><a href="#">บัตรเครดิต</a></li>
+              <li><a href="#">รีไฟแนนซ์บ้าน</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="widget">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="widget">
+            <h5>รับข้อมูลข่าวสารจากเรา !</h5>
+            <!-- Start Subscribe -->
+            <div class="input-group">
+              <input type="text" class="form-subscribe" placeholder="ป้อนอีเมลล์ของคุณ...">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button"><span class="fa fa-paper-plane"></span></button>
+              </span>
+            </div>
+            <!-- End Subscribe -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="subfooter">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <p class="copyright">สงวนลิขสิทธิ์ &copy; 2019 <a href="http://plugin-digital-solution.com/">Plugin Digital Solution</a></p>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <ul class="social-network">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer -->
+	
+	<!-- Start to top -->  
+    <a href="#" class="scrollToTop">
+        <i class="fa fa-chevron-up"></i>
+    </a>  
+    <!-- End to top -->
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootsnav.js"></script>
+
+	
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+	<!-- Custom form -->
+	<script src="js/form/jcf.js"></script>
+	<script src="js/form/jcf.scrollable.js"></script>
+	<script src="js/form/jcf.select.js"></script>
+	
+	<!-- Custom checkbox and radio -->
+	<script src="js/checkator/fm.checkator.jquery.js"></script>
+	<script src="js/checkator/setting.js"></script>
+	
+    <!-- Custom input file -->
+	<script src="js/custominput/modernizr.js"></script>
+	<script src="js/custominput/custom-file-input.js"></script>
+	
+	<!-- google code prettify -->
+	<script src="js/google-code-prettify/prettify.js"></script>
+	
+	<!-- price filter -->
+	<script src="js/rangeSlider/ion.rangeSlider.min.js"></script>
+	<script src="js/rangeSlider/setting.js"></script>
+	
+	<!-- Product filter -->
+	<script src="js/product/product-filter.js"></script>
+	<script src="js/product/setting.js"></script>
+	
+    <!-- Twitter -->
+	<script src="js/twitter/tweetie.min.js"></script>
+	<script src="js/twitter/ticker.js"></script>
+	<script src="js/twitter/setting.js"></script>
+	
+    <!-- Custom -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>
